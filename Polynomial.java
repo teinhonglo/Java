@@ -1,6 +1,5 @@
 import java.util.Scanner;
 public class Polynomial{
-	/**main function*/
 	public static void main(String[]args){
 		//first poly
 		Scanner input=new Scanner(System.in);
@@ -149,7 +148,7 @@ public class Polynomial{
 			if(mulC[i]!=0){
 				if(i>0)
 					System.out.print("("+mulC[i]+")x^"+i+"+");
-				else 
+				else
 					System.out.println("("+mulC[i]+")");
 			}
 		}

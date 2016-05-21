@@ -33,8 +33,8 @@ public class Polynomial_list{
 		//input x=?
 		System.out.println("please input number for x=?");
 		int answer=input.nextInt();						
-		int tail=powerList.size();						//record tow polynomial last index
-		//call three method		my list(power and coefficient):firstPoly+secondPoly+summation+subtraction+multiple
+		int tail=powerList.size();						//record two polynomial last index
+		//call three method		my list(power and coefficient):firstPoly+secondPoly+summation+subtraction+multiply
 		sumOfpoly(polyList,powerList,firstPolyLength,answer,tail);
 		subOfpoly(polyList,powerList,firstPolyLength,answer,tail);
 		mulOfpoly(polyList,powerList,firstPolyLength,answer,tail);
@@ -156,20 +156,20 @@ public class Polynomial_list{
 		System.out.println();
 	}
 	
-	/**The multiple of two Polynomial*/
+	/**The multiply of two Polynomial*/
 	public static void mulOfpoly(LinkedList <Integer> polyList,LinkedList<Integer> powerList,int firstPolyLength,int answer,int tail){		
-		int mulTail=powerList.size();		//get index of multiple section
-		//add first in subtraction section
+		int mulTail=powerList.size();		//get index of multiply section
+		//add first in multiply section
 		powerList.addLast(powerList.get(0)+powerList.get(firstPolyLength));
 		polyList.addLast(polyList.get(0)*polyList.get(firstPolyLength));
-		//multiple
+		//multiply
 		for(int i=0;i<firstPolyLength;i++){
 			for(int j=firstPolyLength;j<tail;j++){
 				if(i==0&&j==firstPolyLength)
 					j++;								//out of first step
 				for(int z=mulTail;z<powerList.size();z++){
 					if((powerList.get(i)+powerList.get(j))<powerList.get(z)){
-						//if nothing above your power until up to multiple tail,then add the last of multiple section
+						//if nothing above your power until up to multiply tail,then add the last of multiply section
 						if(z==powerList.size()-1){
 							powerList.addLast(powerList.get(i)+powerList.get(j));
 							polyList.addLast(polyList.get(i)*polyList.get(j));
@@ -178,7 +178,7 @@ public class Polynomial_list{
 						else
 							continue;
 					}
-					//if power equal,then coefficient multiple and adding together
+					//if power equal,then coefficient multiplying together and adding together
 					else if((powerList.get(i)+powerList.get(j))==powerList.get(z)){
 						polyList.set(z, polyList.get(i)*polyList.get(j)+polyList.get(z));
 						break;
@@ -194,9 +194,9 @@ public class Polynomial_list{
 			}
 		}
 		
-		//print the multiple of polynomial
+		//print the multiply of polynomial
 		int mul=0;
-		System.out.println("The multiple of polynomail is :");
+		System.out.println("The multiply of polynomail is :");
 		for(int i=mulTail;i<powerList.size();i++){
 			if(polyList.get(i)!=0){
 				if(powerList.get(i)>0)

@@ -151,7 +151,7 @@ public class MazingProblem {
 						pathDir.push(beforeDir.pop());
 						pathRows.push(row);
 						pathCols.push(column);
-						//maze[row][column]=4;
+						maze[row][column]=4;
 						i=0;
 						count=0;
 					}
